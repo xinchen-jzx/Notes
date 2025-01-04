@@ -14,11 +14,12 @@
         "copy-code-button",
         "advanced-emoji",
         "multipart",
+        "expandable-chapters",
         "theme-comscore"
     ],
     "pluginsConfig": {
         "insert-logo": {
-            "url": "./assets/img/avatar.jpg",
+            "url": "https://xinchen-jzx.github.io/assets/img/avatar.jpg",
             "style": "background: none; max-height: 100px; min-height: 30px"
         },
         "github": {
