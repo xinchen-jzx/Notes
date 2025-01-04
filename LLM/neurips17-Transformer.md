@@ -1,4 +1,4 @@
-# NeurIPS17 - Transformer
+# neurips17 - Transformer
 
 > Attention is All You Need
 
