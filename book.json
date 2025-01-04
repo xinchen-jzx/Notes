@@ -9,6 +9,7 @@
         "back-to-top-button",
         "chapter-fold",
         "splitter",
+        "sidebar-style",
         "insert-logo",
         "github",
         "copy-code-button",
@@ -21,6 +22,10 @@
         "insert-logo": {
             "url": "https://xinchen-jzx.github.io/assets/img/avatar.jpg",
             "style": "background: none; max-height: 100px; min-height: 30px"
+        },
+        "sidebar-style": {
+            "title": "zexin's World",
+            "author": ""
         },
         "github": {
             "url": "https://github.com/xinchen-jzx"
