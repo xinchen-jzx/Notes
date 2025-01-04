@@ -12,7 +12,9 @@
         "insert-logo",
         "github",
         "copy-code-button",
-        "advanced-emoji"
+        "advanced-emoji",
+        "multipart",
+        "theme-comscore"
     ],
     "pluginsConfig": {
         "insert-logo": {
@@ -25,7 +27,7 @@
     },
     "links": {
         "sidebar": {
-            "HomePage": "https://xinchen-jzx.github.io"
+            "About Me": "https://xinchen-jzx.github.io"
         }
     }
 }
