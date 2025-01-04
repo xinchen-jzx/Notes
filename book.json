@@ -1,0 +1,19 @@
+{
+    "title": "Blog",
+    "author": "Jane",
+    "description": "zexin's Blog",
+    "plugins": [
+        "-lunr",
+        "-search",
+        "search-pro",
+        "back-to-top-button",
+        "chapter-fold",
+        "splitter"
+    ],
+    "links": {
+        "sidebar": {
+            "HomePage": "https://xinchen-jzx.github.io",
+            "Github": "https://github.com/xinchen-jzx"
+        }
+    }
+}
