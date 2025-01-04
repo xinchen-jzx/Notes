@@ -8,12 +8,24 @@
         "search-pro",
         "back-to-top-button",
         "chapter-fold",
-        "splitter"
+        "splitter",
+        "insert-logo",
+        "github",
+        "copy-code-button",
+        "advanced-emoji"
     ],
+    "pluginsConfig": {
+        "insert-logo": {
+            "url": "./assets/img/avatar.jpg",
+            "style": "background: none; max-height: 100px; min-height: 30px"
+        },
+        "github": {
+            "url": "https://github.com/xinchen-jzx"
+        }
+    },
     "links": {
         "sidebar": {
-            "HomePage": "https://xinchen-jzx.github.io",
-            "Github": "https://github.com/xinchen-jzx"
+            "HomePage": "https://xinchen-jzx.github.io"
         }
     }
 }
