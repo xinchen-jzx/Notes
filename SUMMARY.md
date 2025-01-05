@@ -6,6 +6,7 @@
 
 * [GPU Management](MLSys/GPUManagement/README.md)
 * [MLServing](MLSys/MLServing/README.md)
+    * [ICML23 - DejaVu](MLSys/MLServing/icml23-DejaVu.md)
     * [SOSP24 - PowerInfer](MLSys/MLServing/sosp24-PowerInfer.md)
 * [LLM](LLM/README.md)
     * [LLM Foundations](LLM/LLMModels.md)

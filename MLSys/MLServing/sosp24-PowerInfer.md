@@ -1,4 +1,4 @@
-# sosp24-PowerInfer
+# SOSP24 - PowerInfer
 
 > PowerInfer: Fast Large Language Model Serving with a Consumer-grade GPU
 
