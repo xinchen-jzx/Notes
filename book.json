@@ -16,7 +16,8 @@
         "advanced-emoji",
         "multipart",
         "expandable-chapters",
-        "theme-comscore"
+        "theme-comscore",
+        "katex"
     ],
     "pluginsConfig": {
         "insert-logo": {

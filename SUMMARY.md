@@ -17,5 +17,7 @@
 ## Part II: Life
 
 * [My Lover](Lover/README.md)
-* []
+* [Year-end Summary](life/README.md)
+    * [2024 Summary](life/2024-summary.md)
+* [Reading](Reading/README.md)
 * [My Friends](Friends/README.md)
