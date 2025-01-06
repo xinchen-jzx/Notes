@@ -20,4 +20,5 @@
 * [Year-end Summary](life/README.md)
     * [2024 Summary](life/2024-summary.md)
 * [Reading](Reading/README.md)
+    * [我的阿勒泰](Reading/My_Altay.md)
 * [My Friends](Friends/README.md)
