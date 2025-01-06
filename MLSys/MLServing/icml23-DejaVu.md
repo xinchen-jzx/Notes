@@ -22,6 +22,12 @@ ICML23中比较有意思的一篇文章。它的核心方法是**在推理阶段
 
 Contextual Sparsity的本质是强调对于一个预训练好的LLM A，它的weight的重要性依赖于输入X。例如对于两个不同的输入X1和X2，经动态剪枝得到的LLM B是不一样的。这就是Contextual的含义，它指LLM B依赖于上下文，而上下文就是模型的输入。
 
+相对于**非上下文稀疏性**或**静态稀疏性**，上下文稀疏性在效率和准确度之间有更好的权衡，这句话怎么理解呢？
+
+![fig6](../../assets/MLSys/MLServing/icml23-DejaVu-fig6.png)
+
+如上图所示，如果直接做静态稀疏和非上下文稀疏 (主要是指静态剪枝和随机动态剪枝)，会使准确度快速下降，而上下文稀疏化则会好很多。原因是上下文稀疏化不仅取决于单个输入标记，还取决于它们之间的相互关联。上图中的Theoretical Reduction代表几倍稀疏化。
+
 但是Contextual Sparsity本身在LLM中存在吗？
 
 原文验证Contextual Sparsity的方法很简单。首先，使用输入X进行一次前向推理，并记录输出具有较大norm的MHA (Multi-Head Attention)中的head和MLP中的神经元。
@@ -53,6 +59,8 @@ MLP是逐position执行的，所以它的物理意义应该按照图中红色框
 - MLP中神经元的稀疏率约为95%。
 
 即：在实际推理过程中，我们可以只使用约20%的Attention head和约5%的MLP神经元，就能达到和全参模型差不多的效果。
+
+![fig7](../../assets/MLSys/MLServing/icml23-DejaVu-fig7.png)
 
 ## 2. 稀疏性预测
 
@@ -93,7 +101,7 @@ MLP是逐position执行的，所以它的物理意义应该按照图中红色框
 
 因此原本只能串行执行的四步操作，其中预测编号的两步可以和剩下的两步并行执行了。
 
-但是为什么能这样做？原文给出的理由是：**LLM中token的embedding的变化是非常缓慢的**。因为缓慢，所以提前一步去预测似乎也比较合理。
+但是为什么能这样做？原文给出的理由是：**Slowly Changing Embedding across Layers**。因为缓慢，所以提前一步去预测似乎也比较合理。
 
 ![fig5](../../assets/MLSys/MLServing/icml23-DejaVu-fig5.png)
 
