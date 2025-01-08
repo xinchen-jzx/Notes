@@ -6,6 +6,7 @@
 
 * [GPU Management](MLSys/GPUManagement/README.md)
 * [MLServing](MLSys/MLServing/README.md)
+    * [SOSP23 - vLLM](MLSys/MLServing/sosp23-vLLM.md)
     * [ICML23 - DejaVu](MLSys/MLServing/icml23-DejaVu.md)
     * [ACL24 - LLM in a flash](MLSys/MLServing/acl24-LLM_in_a_flash.md)
     * [SOSP24 - PowerInfer](MLSys/MLServing/sosp24-PowerInfer.md)
