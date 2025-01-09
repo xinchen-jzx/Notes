@@ -93,7 +93,7 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="sosp24-PowerInfer.html" />
+    <link rel="next" href="acl24-LLM_in_a_flash.html" />
     
     
     <link rel="prev" href="./" />
@@ -194,7 +194,20 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2.2" data-path="sosp24-PowerInfer.html">
+        <li class="chapter " data-level="2.2.2" data-path="acl24-LLM_in_a_flash.html">
+            
+                <a href="acl24-LLM_in_a_flash.html">
+            
+                    
+                    ACL24 - LLM in a flash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="sosp24-PowerInfer.html">
             
                 <a href="sosp24-PowerInfer.html">
             
@@ -277,7 +290,20 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="../../Friends/">
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                    []
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../Friends/">
             
                 <a href="../../Friends/">
             
@@ -349,6 +375,9 @@
 <p>&#x4E0A;&#x56FE;&#x4E2D;&#xFF0C;LLM B&#x7684;&#x4EA7;&#x751F;&#x8FC7;&#x7A0B;&#x53D7;&#x8F93;&#x5165;X&#x7684;&#x5F71;&#x54CD;&#x3002;DejaVu&#x8981;&#x89E3;&#x51B3;&#x7684;&#x6838;&#x5FC3;&#x662F;&#xFF1A;<strong>&#x5982;&#x4F55;&#x57FA;&#x4E8E;&#x8F93;&#x5165;X&#x4ECE;&#x9884;&#x8BAD;&#x7EC3;&#x597D;&#x7684;LLM A&#x4E2D;&#x5FEB;&#x901F;&#x4EA7;&#x751F;LLM B</strong>&#x3002;</p>
 <h2 id="1-contextual-sparsity">1. Contextual Sparsity</h2>
 <p>Contextual Sparsity&#x7684;&#x672C;&#x8D28;&#x662F;&#x5F3A;&#x8C03;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x9884;&#x8BAD;&#x7EC3;&#x597D;&#x7684;LLM A&#xFF0C;&#x5B83;&#x7684;weight&#x7684;&#x91CD;&#x8981;&#x6027;&#x4F9D;&#x8D56;&#x4E8E;&#x8F93;&#x5165;X&#x3002;&#x4F8B;&#x5982;&#x5BF9;&#x4E8E;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x8F93;&#x5165;X1&#x548C;X2&#xFF0C;&#x7ECF;&#x52A8;&#x6001;&#x526A;&#x679D;&#x5F97;&#x5230;&#x7684;LLM B&#x662F;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#x3002;&#x8FD9;&#x5C31;&#x662F;Contextual&#x7684;&#x542B;&#x4E49;&#xFF0C;&#x5B83;&#x6307;LLM B&#x4F9D;&#x8D56;&#x4E8E;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x800C;&#x4E0A;&#x4E0B;&#x6587;&#x5C31;&#x662F;&#x6A21;&#x578B;&#x7684;&#x8F93;&#x5165;&#x3002;</p>
+<p>&#x76F8;&#x5BF9;&#x4E8E;<strong>&#x975E;&#x4E0A;&#x4E0B;&#x6587;&#x7A00;&#x758F;&#x6027;</strong>&#x6216;<strong>&#x9759;&#x6001;&#x7A00;&#x758F;&#x6027;</strong>&#xFF0C;&#x4E0A;&#x4E0B;&#x6587;&#x7A00;&#x758F;&#x6027;&#x5728;&#x6548;&#x7387;&#x548C;&#x51C6;&#x786E;&#x5EA6;&#x4E4B;&#x95F4;&#x6709;&#x66F4;&#x597D;&#x7684;&#x6743;&#x8861;&#xFF0C;&#x8FD9;&#x53E5;&#x8BDD;&#x600E;&#x4E48;&#x7406;&#x89E3;&#x5462;&#xFF1F;</p>
+<p><img src="../../assets/MLSys/MLServing/icml23-DejaVu-fig6.png" alt="fig6"></p>
+<p>&#x5982;&#x4E0A;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x5982;&#x679C;&#x76F4;&#x63A5;&#x505A;&#x9759;&#x6001;&#x7A00;&#x758F;&#x548C;&#x975E;&#x4E0A;&#x4E0B;&#x6587;&#x7A00;&#x758F; (&#x4E3B;&#x8981;&#x662F;&#x6307;&#x9759;&#x6001;&#x526A;&#x679D;&#x548C;&#x968F;&#x673A;&#x52A8;&#x6001;&#x526A;&#x679D;)&#xFF0C;&#x4F1A;&#x4F7F;&#x51C6;&#x786E;&#x5EA6;&#x5FEB;&#x901F;&#x4E0B;&#x964D;&#xFF0C;&#x800C;&#x4E0A;&#x4E0B;&#x6587;&#x7A00;&#x758F;&#x5316;&#x5219;&#x4F1A;&#x597D;&#x5F88;&#x591A;&#x3002;&#x539F;&#x56E0;&#x662F;&#x4E0A;&#x4E0B;&#x6587;&#x7A00;&#x758F;&#x5316;&#x4E0D;&#x4EC5;&#x53D6;&#x51B3;&#x4E8E;&#x5355;&#x4E2A;&#x8F93;&#x5165;&#x6807;&#x8BB0;&#xFF0C;&#x8FD8;&#x53D6;&#x51B3;&#x4E8E;&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;&#x7684;&#x76F8;&#x4E92;&#x5173;&#x8054;&#x3002;&#x4E0A;&#x56FE;&#x4E2D;&#x7684;Theoretical Reduction&#x4EE3;&#x8868;&#x51E0;&#x500D;&#x7A00;&#x758F;&#x5316;&#x3002;</p>
 <p>&#x4F46;&#x662F;Contextual Sparsity&#x672C;&#x8EAB;&#x5728;LLM&#x4E2D;&#x5B58;&#x5728;&#x5417;&#xFF1F;</p>
 <p>&#x539F;&#x6587;&#x9A8C;&#x8BC1;Contextual Sparsity&#x7684;&#x65B9;&#x6CD5;&#x5F88;&#x7B80;&#x5355;&#x3002;&#x9996;&#x5148;&#xFF0C;&#x4F7F;&#x7528;&#x8F93;&#x5165;X&#x8FDB;&#x884C;&#x4E00;&#x6B21;&#x524D;&#x5411;&#x63A8;&#x7406;&#xFF0C;&#x5E76;&#x8BB0;&#x5F55;&#x8F93;&#x51FA;&#x5177;&#x6709;&#x8F83;&#x5927;norm&#x7684;MHA (Multi-Head Attention)&#x4E2D;&#x7684;head&#x548C;MLP&#x4E2D;&#x7684;&#x795E;&#x7ECF;&#x5143;&#x3002;</p>
 <p>&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x8D77;&#x6765;&#x4E5F;&#x6BD4;&#x8F83;&#x5BB9;&#x6613;&#x3002;&#x4F8B;&#x5982;&#x5BF9;&#x4E8E;MHA&#xFF0C;&#x5B83;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;head&#x7684;&#x8F93;&#x51FA;&#x662F;&#x4E00;&#x4E2A;&#x77E9;&#x9635;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x5BF9;&#x8FD9;&#x4E2A;&#x8F93;&#x51FA;&#x77E9;&#x9635;&#x8BA1;&#x7B97;&#x5B83;&#x7684;L2 Norm&#xFF0C;&#x7136;&#x540E;&#x4ECE;&#x6240;&#x6709;head&#x4E2D;&#x6311;&#x9009;&#x51FA;L2 Norm&#x6700;&#x5927;&#x7684;&#x90A3;&#x51E0;&#x4E2A;head&#x5373;&#x53EF;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#x3002;</p>
@@ -370,6 +399,7 @@
 <li>MLP&#x4E2D;&#x795E;&#x7ECF;&#x5143;&#x7684;&#x7A00;&#x758F;&#x7387;&#x7EA6;&#x4E3A;95%&#x3002;</li>
 </ul>
 <p>&#x5373;&#xFF1A;&#x5728;&#x5B9E;&#x9645;&#x63A8;&#x7406;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x53EA;&#x4F7F;&#x7528;&#x7EA6;20%&#x7684;Attention head&#x548C;&#x7EA6;5%&#x7684;MLP&#x795E;&#x7ECF;&#x5143;&#xFF0C;&#x5C31;&#x80FD;&#x8FBE;&#x5230;&#x548C;&#x5168;&#x53C2;&#x6A21;&#x578B;&#x5DEE;&#x4E0D;&#x591A;&#x7684;&#x6548;&#x679C;&#x3002;</p>
+<p><img src="../../assets/MLSys/MLServing/icml23-DejaVu-fig7.png" alt="fig7"></p>
 <h2 id="2-&#x7A00;&#x758F;&#x6027;&#x9884;&#x6D4B;">2. &#x7A00;&#x758F;&#x6027;&#x9884;&#x6D4B;</h2>
 <p>&#x60F3;&#x8981;&#x5229;&#x7528;&#x524D;&#x6587;&#x63D0;&#x5230;&#x7684;&#x7A00;&#x758F;&#x6027;&#x6765;&#x52A0;&#x5FEB;&#x63A8;&#x7406;&#x901F;&#x5EA6;&#xFF0C;&#x9700;&#x8981;&#x6709;&#x65B9;&#x6CD5;&#x6765;&#x63D0;&#x524D;&#x51C6;&#x786E;&#x5730;&#x9884;&#x6D4B;&#x5BF9;&#x4E8E;&#x5F53;&#x524D;&#x8F93;&#x5165;X&#xFF0C;&#x54EA;&#x4E9B;head&#x548C;&#x54EA;&#x4E9B;MLP&#x4E2D;&#x7684;&#x795E;&#x7ECF;&#x5143;&#x662F;&quot;&#x9AD8;&#x6548;&#x53C2;&#x6570;&quot;&#x3002;</p>
 <p>&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x4E24;&#x4E2A;&#x6A21;&#x578B;&#x6765;&#x505A;&#x9884;&#x6D4B;&#x3002;&#x7B2C;&#x4E00;&#x4E2A;&#x6A21;&#x578B;&#x7528;&#x6765;&#x9884;&#x6D4B;MHA&#x4E2D;&#x54EA;&#x4E9B;head&#x662F;&quot;&#x9AD8;&#x6548;&#x7684;&quot;&#xFF1B;&#x7B2C;&#x4E8C;&#x4E2A;&#x6A21;&#x578B;&#x7528;&#x6765;&#x9884;&#x6D4B;MLP&#x4E2D;&#x54EA;&#x4E9B;&#x795E;&#x7ECF;&#x5143;&#x662F;&quot;&#x9AD8;&#x6548;&#x7684;&quot; (&#x795E;&#x7ECF;&#x5143;&#x5B9E;&#x9645;&#x4E0A;&#x5BF9;&#x5E94;&#x4E8E;&#x53C2;&#x6570;&#x77E9;&#x9635;&#x7684;&#x67D0;&#x4E00;&#x5217;&#x6216;&#x67D0;&#x4E00;&#x884C;&#x3002;&#x81F3;&#x4E8E;&#x7A76;&#x7ADF;&#x662F;&#x5217;&#x8FD8;&#x662F;&#x884C;&#xFF0C;&#x4F9D;&#x8D56;&#x4E8E;&#x5BF9;&#x53C2;&#x6570;&#x77E9;&#x9635;&#x7684;&#x5B9A;&#x4E49;&#x5F62;&#x5F0F;)&#x3002;</p>
@@ -401,7 +431,7 @@
 <h3 id="31-&#x5E76;&#x884C;&#x5316;&#x7A00;&#x758F;&#x9884;&#x6D4B;">3.1 &#x5E76;&#x884C;&#x5316;&#x7A00;&#x758F;&#x9884;&#x6D4B;</h3>
 <p>&#x5047;&#x8BBE;$x$&#x4E3A;&#x5F53;&#x524D;&#x5C42;$l$&#x7684;&#x8F93;&#x5165;&#x3002;&#x5E76;&#x884C;&#x5316;&#x7684;&#x65B9;&#x6848;&#x662F;&#x76F4;&#x63A5;&#x4F7F;&#x7528;$x$&#x6765;&#x9884;&#x6D4B;$l+1$&#x5C42;&#x7684;head&#x7F16;&#x53F7;&#x548C;MLP&#x795E;&#x7ECF;&#x5143;&#x7F16;&#x53F7;&#x3002;&#x8FD9;&#x76F8;&#x5F53;&#x4E8E;&#x662F;<strong>&#x63D0;&#x524D;&#x9884;&#x6D4B;</strong>&#x3002;&#x8FD9;&#x6837;&#x505A;&#x7684;&#x597D;&#x5904;&#x662F;&#xFF1A;&#x5BF9;&#x7B2C;$l$&#x5C42;&#x6765;&#x8BF4;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x5728;&#x8BA1;&#x7B97;MHA&#x548C;MLP&#x7684;&#x540C;&#x65F6;&#x9884;&#x6D4B;&#x4E0B;&#x4E00;&#x5C42;&#x7684;head&#x7F16;&#x53F7;&#x548C;MLP&#x795E;&#x7ECF;&#x5143;&#x7F16;&#x53F7;&#x3002;</p>
 <p>&#x56E0;&#x6B64;&#x539F;&#x672C;&#x53EA;&#x80FD;&#x4E32;&#x884C;&#x6267;&#x884C;&#x7684;&#x56DB;&#x6B65;&#x64CD;&#x4F5C;&#xFF0C;&#x5176;&#x4E2D;&#x9884;&#x6D4B;&#x7F16;&#x53F7;&#x7684;&#x4E24;&#x6B65;&#x53EF;&#x4EE5;&#x548C;&#x5269;&#x4E0B;&#x7684;&#x4E24;&#x6B65;&#x5E76;&#x884C;&#x6267;&#x884C;&#x4E86;&#x3002;</p>
-<p>&#x4F46;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x80FD;&#x8FD9;&#x6837;&#x505A;&#xFF1F;&#x539F;&#x6587;&#x7ED9;&#x51FA;&#x7684;&#x7406;&#x7531;&#x662F;&#xFF1A;<strong>LLM&#x4E2D;token&#x7684;embedding&#x7684;&#x53D8;&#x5316;&#x662F;&#x975E;&#x5E38;&#x7F13;&#x6162;&#x7684;</strong>&#x3002;&#x56E0;&#x4E3A;&#x7F13;&#x6162;&#xFF0C;&#x6240;&#x4EE5;&#x63D0;&#x524D;&#x4E00;&#x6B65;&#x53BB;&#x9884;&#x6D4B;&#x4F3C;&#x4E4E;&#x4E5F;&#x6BD4;&#x8F83;&#x5408;&#x7406;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x80FD;&#x8FD9;&#x6837;&#x505A;&#xFF1F;&#x539F;&#x6587;&#x7ED9;&#x51FA;&#x7684;&#x7406;&#x7531;&#x662F;&#xFF1A;<strong>Slowly Changing Embedding across Layers</strong>&#x3002;&#x56E0;&#x4E3A;&#x7F13;&#x6162;&#xFF0C;&#x6240;&#x4EE5;&#x63D0;&#x524D;&#x4E00;&#x6B65;&#x53BB;&#x9884;&#x6D4B;&#x4F3C;&#x4E4E;&#x4E5F;&#x6BD4;&#x8F83;&#x5408;&#x7406;&#x3002;</p>
 <p><img src="../../assets/MLSys/MLServing/icml23-DejaVu-fig5.png" alt="fig5"></p>
 <p>&#x4E0A;&#x56FE;&#x4E2D;&#x7684;&#x5DE6;&#x56FE;&#x662F;&#x8FDE;&#x7EED;&#x7684;&#x4E24;&#x4E2A;&#x7F51;&#x7EDC;&#x5C42;token embedding&#x4E4B;&#x95F4;&#x7684;&#x4F59;&#x5F26;&#x76F8;&#x4F3C;&#x5EA6;&#x3002;&#x4E0A;&#x56FE;&#x4E2D;&#x7684;&#x53F3;&#x56FE;&#x662F;&#x95F4;&#x9694;n&#x5C42;&#x7684;token embedding&#x4E4B;&#x95F4;&#x7684;&#x4F59;&#x5F26;&#x76F8;&#x4F3C;&#x5EA6;&#x3002;&#x4E24;&#x4E2A;&#x56FE;&#x975E;&#x5E38;&#x76F4;&#x89C2;&#xFF0C;LLM&#x4E2D;token&#x7684;embedding&#x7684;&#x53D8;&#x5316;&#x786E;&#x5B9E;&#x975E;&#x5E38;&#x7F13;&#x6162;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x4F7F;&#x7528;&#x524D;&#x4E00;&#x5C42;&#x7684;&#x8F93;&#x5165;&#x53BB;&#x63D0;&#x524D;&#x9884;&#x6D4B;&#x4E0B;&#x4E00;&#x5C42;&#x7684;&#x4E24;&#x4E2A;&#x7F16;&#x53F7;&#xFF0C;&#x4E5F;&#x5C31;&#x6BD4;&#x8F83;&#x5408;&#x7406;&#x3002;</p>
 <h3 id="32-kernel-fusion">3.2 Kernel Fusion</h3>
@@ -445,7 +475,7 @@
                 </a>
                 
                 
-                <a href="sosp24-PowerInfer.html" class="navigation navigation-next " aria-label="Next page: SOSP24 - PowerInfer">
+                <a href="acl24-LLM_in_a_flash.html" class="navigation navigation-next " aria-label="Next page: ACL24 - LLM in a flash">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -456,7 +486,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ICML23 - DejaVu","level":"2.2.1","depth":2,"next":{"title":"SOSP24 - PowerInfer","level":"2.2.2","depth":2,"path":"MLSys/MLServing/sosp24-PowerInfer.md","ref":"MLSys/MLServing/sosp24-PowerInfer.md","articles":[]},"previous":{"title":"MLServing","level":"2.2","depth":1,"path":"MLSys/MLServing/README.md","ref":"MLSys/MLServing/README.md","articles":[{"title":"ICML23 - DejaVu","level":"2.2.1","depth":2,"path":"MLSys/MLServing/icml23-DejaVu.md","ref":"MLSys/MLServing/icml23-DejaVu.md","articles":[]},{"title":"SOSP24 - PowerInfer","level":"2.2.2","depth":2,"path":"MLSys/MLServing/sosp24-PowerInfer.md","ref":"MLSys/MLServing/sosp24-PowerInfer.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","splitter","sidebar-style","insert-logo","github","copy-code-button","advanced-emoji","multipart","expandable-chapters","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"","title":"zexin's World"},"chapter-fold":{},"github":{"url":"https://github.com/xinchen-jzx"},"splitter":{},"search-pro":{},"multipart":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 100px; min-height: 30px","url":"https://xinchen-jzx.github.io/assets/img/avatar.jpg"},"expandable-chapters":{}},"theme":"default","author":"Jane","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Blog","links":{"sidebar":{"About Me":"https://xinchen-jzx.github.io"}},"gitbook":"*","description":"zexin's Blog"},"file":{"path":"MLSys/MLServing/icml23-DejaVu.md","mtime":"2025-01-05T08:18:27.164Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-05T08:20:24.308Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ICML23 - DejaVu","level":"2.2.1","depth":2,"next":{"title":"ACL24 - LLM in a flash","level":"2.2.2","depth":2,"path":"MLSys/MLServing/acl24-LLM_in_a_flash.md","ref":"MLSys/MLServing/acl24-LLM_in_a_flash.md","articles":[]},"previous":{"title":"MLServing","level":"2.2","depth":1,"path":"MLSys/MLServing/README.md","ref":"MLSys/MLServing/README.md","articles":[{"title":"ICML23 - DejaVu","level":"2.2.1","depth":2,"path":"MLSys/MLServing/icml23-DejaVu.md","ref":"MLSys/MLServing/icml23-DejaVu.md","articles":[]},{"title":"ACL24 - LLM in a flash","level":"2.2.2","depth":2,"path":"MLSys/MLServing/acl24-LLM_in_a_flash.md","ref":"MLSys/MLServing/acl24-LLM_in_a_flash.md","articles":[]},{"title":"SOSP24 - PowerInfer","level":"2.2.3","depth":2,"path":"MLSys/MLServing/sosp24-PowerInfer.md","ref":"MLSys/MLServing/sosp24-PowerInfer.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","splitter","sidebar-style","insert-logo","github","copy-code-button","advanced-emoji","multipart","expandable-chapters","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"","title":"zexin's World"},"chapter-fold":{},"github":{"url":"https://github.com/xinchen-jzx"},"splitter":{},"search-pro":{},"multipart":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 100px; min-height: 30px","url":"https://xinchen-jzx.github.io/assets/img/avatar.jpg"},"expandable-chapters":{}},"theme":"default","author":"Jane","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Blog","links":{"sidebar":{"About Me":"https://xinchen-jzx.github.io"}},"gitbook":"*","description":"zexin's Blog"},"file":{"path":"MLSys/MLServing/icml23-DejaVu.md","mtime":"2025-01-06T02:21:23.864Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-06T02:24:42.394Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
