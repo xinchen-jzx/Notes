@@ -1,8 +1,4 @@
----
-title: eurosys20-Gandiva_follow_up
-date: 2024-12-23
-tags: GPU Cluster Management
----
+# EuroSys20 - Gandiva_follow_up
 
 > Balancing Efficiency and Fairness in Heterogeneous GPU Clusters for Deep Learning
 
