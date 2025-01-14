@@ -4,6 +4,9 @@
 
 ## Part I: Study
 
+* [Programming Language](ProgrammingLanguage/README.md)
+    * [CPP](ProgrammingLanguage/CPP/README.md)
+    * [Rust](ProgrammingLanguage/Rust/README.md)
 * [GPU Management](MLSys/GPUManagement/README.md)
 * [MLServing](MLSys/MLServing/README.md)
     * [SOSP23 - vLLM](MLSys/MLServing/sosp23-vLLM.md)
