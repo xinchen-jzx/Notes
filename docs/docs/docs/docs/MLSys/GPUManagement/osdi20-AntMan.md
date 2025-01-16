@@ -1,9 +1,4 @@
----
-title: osdi20-AntMan
-date: 2024-12-24
-tags: GPU Cluster Management
-cover: ../../../assets/posts/projects/AICompiler/osdi20-AntMan.png
----
+# OSDI20 - AntMan
 
 > AntMan: Dynamic Scaling on GPU Clusters for Deep Learning
 

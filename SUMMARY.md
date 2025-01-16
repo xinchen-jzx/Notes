@@ -24,4 +24,5 @@
 * [My Lover](Lover/README.md)
 * [Reading](Reading/README.md)
     * [我的阿勒泰](Reading/My_Altay.md)
+* [Guitar](Guitar/README.md)
 * [My Friends](Friends/README.md)
