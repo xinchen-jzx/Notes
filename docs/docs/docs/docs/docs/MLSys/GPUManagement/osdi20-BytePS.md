@@ -1,9 +1,4 @@
----
-title: osdi20-BytePS
-date: 2024-12-24
-tags: GPU Cluster Management
-cover: ../../../assets/posts/projects/AICompiler/osdi20-BytePS.png
----
+# OSDI20 - BytePS
 
 > A Unified Architecture for Accelerating Distributed DNN Training in Heterogeneous GPU/CPU Clusters
 
