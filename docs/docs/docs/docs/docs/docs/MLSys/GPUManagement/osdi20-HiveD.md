@@ -1,8 +1,4 @@
----
-title: osdi20 - HiveD
-date: 2024-12-23
-tags: GPU Cluster Management
----
+# OSDI20 - HiveD
 
 > HiveD: Sharing a GPU Cluster for Deep Learning with Guarantees
 
