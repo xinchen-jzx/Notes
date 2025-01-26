@@ -1,9 +1,4 @@
----
-title: eurosys24-HAP
-date: 2024-12-26
-tags: GPU Cluster Management
-cover: ../../../assets/posts/projects/AICompiler/eurosys24-HAP.png
----
+# EuroSys24 - HAP
 
 > HAP: SPMD DNN Training on Heterogeneous GPU Clusters with Automated Program Synthesis
 

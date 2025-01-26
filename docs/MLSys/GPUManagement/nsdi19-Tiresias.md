@@ -18,11 +18,27 @@ Because DL jobs are sensitive to GPU locality, many existing solutions assign al
 
 The common way to preempt Unlike preemption in CPU, GPU preemption usually takes tens of milliseconds. 
 
-## 2. Tiresias
+## 2. Design
 
 The main objectives of Tiresias are:
-1. minimizing the average job completion time (JCT)
+1. minimizing the average **job completion time (JCT)**
 2. achieving high GPU utilization
 3. avoiding starvation
 
 ![fig1](../../assets/MLSys/GPUManagement/nsdi19-Tiresias-fig1.png)
+
+To address the aforementioned challenges, Tiresias uses an aged based scheduler called **Two-dimensional Attained Service-Based Scheduler (2DAS)**. 2DAS assigns each job a priority based on its attained service. The attained service of a job is calculated based on the number of GPUs it uses and the amount of time it has been running so far. 
+
+When no job duration information is provided, the priority function applies the **Least-Attained-Service (LAS)** algorithm where a job's priority is inverse to its attained service. If the distribution of job duration is provided, then a job's priority equals its Gittins index value. 
+
+Using continuous priorities can lead to a sequence of preemptions (preemption is both time-consuming and expensive in GPUs) and subsequent resumptions for all jobs. Tiresias address this challenge by using **the classic Multi-Level Feedback Queue algorithm (多级反馈队列算法)**. 
+
+![fig2](../../assets/MLSys/GPUManagement/nsdi19-Tiresias-fig2.png)
+
+Another insight of Tiresias is that the skew of the model structure can be a good predictor of whether a job is sensitive to consolidation, because the message size distribution in DLL depends on the tensor size distribution of the model. Based on this insight, Tiresias profiler identifies the amount of skew in tensor distributions across parameter servers and if it is larger than a predefined threshold, Tiresias attempts to consolidate the job in as few machines as possible. 
+
+## 3. 实验中的硬件配置与互联方式
+
+- **InfiniBand网络**: 所有服务器通过100 Gbps EDR Mellanox InfiniBand网络互联
+- **RDMA (Remote Direct Memory Access)**: 实验中使用RDMA技术进行GPU之间的通信
+- **GPFS文件系统**: 集群中的所有服务器共享一个高性能GPFS文件系统, 用于存储和读取作业的检查点文件
