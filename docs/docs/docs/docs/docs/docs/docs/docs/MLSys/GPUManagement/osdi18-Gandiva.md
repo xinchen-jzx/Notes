@@ -1,8 +1,4 @@
----
-title: osdi18-Gandiva
-date: 2024-12-23
-tags: GPU Cluster Management
----
+# OSDI18 - Gandiva
 
 > Ganddiva: Introspective Cluster Scheduling for Deep Learning
 

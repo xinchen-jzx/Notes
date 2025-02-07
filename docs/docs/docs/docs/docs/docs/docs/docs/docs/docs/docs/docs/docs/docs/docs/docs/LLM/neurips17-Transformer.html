@@ -53,6 +53,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -290,20 +294,71 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" >
+        <li class="chapter " data-level="3.2" data-path="../life/">
             
-                <span>
+                <a href="../life/">
             
                     
-                    []
+                    Year-end Summary
             
-                </span>
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../life/2024-summary.html">
+            
+                <a href="../life/2024-summary.html">
+            
+                    
+                    2024 Summary
+            
+                </a>
             
 
             
         </li>
     
-        <li class="chapter " data-level="3.3" data-path="../Friends/">
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../Reading/">
+            
+                <a href="../Reading/">
+            
+                    
+                    Reading
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../Reading/My_Altay.html">
+            
+                <a href="../Reading/My_Altay.html">
+            
+                    
+                    我的阿勒泰
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../Friends/">
             
                 <a href="../Friends/">
             
@@ -460,7 +515,7 @@
 <p>Decoder Attention&#x5C42;&#x7684;&#x539F;&#x7406;&#x548C;&#x591A;&#x5934;&#x6CE8;&#x610F;&#x529B; (MultiHeaded Self Attention)&#x673A;&#x5236;&#x7C7B;&#x4F3C;&#xFF0C;&#x4E0D;&#x540C;&#x4E4B;&#x5904;&#x662F;&#xFF1A;Decoder Attention&#x5C42;&#x662F;&#x4F7F;&#x7528;&#x524D;&#x4E00;&#x5C42;&#x7684;&#x8F93;&#x51FA;&#x6765;&#x6784;&#x9020;Query&#x77E9;&#x9635;&#xFF0C;&#x800C;Key&#x77E9;&#x9635;&#x548C;Value&#x77E9;&#x9635;&#x6765;&#x81EA;&#x4E8E;&#x7F16;&#x7801;&#x5668; (Encoder)&#x6700;&#x7EC8;&#x7684;&#x8F93;&#x51FA;&#x3002;</p>
 <h2 id="11-&#x6700;&#x540E;&#x7684;&#x7EBF;&#x6027;&#x5C42;&#x548C;softmax&#x5C42;">11. &#x6700;&#x540E;&#x7684;&#x7EBF;&#x6027;&#x5C42;&#x548C;Softmax&#x5C42;</h2>
 <p>Decoder&#x6700;&#x7EC8;&#x7684;&#x8F93;&#x51FA;&#x662F;&#x4E00;&#x4E2A;&#x5411;&#x91CF;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x6D6E;&#x70B9;&#x6570;&#x3002;&#x6211;&#x4EEC;&#x600E;&#x4E48;&#x628A;&#x8FD9;&#x4E2A;&#x5411;&#x91CF;&#x8F6C;&#x6362;&#x4E3A;&#x5355;&#x8BCD;&#x5462;&#xFF1F;&#x8FD9;&#x662F;&#x7531;Softmax&#x5C42;&#x540E;&#x9762;&#x7684;&#x7EBF;&#x6027;&#x5C42;&#x6765;&#x5B8C;&#x6210;&#x7684;&#x3002;</p>
-<p>&#x7EBF;&#x6027;&#x5C42;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x7684;&#x5168;&#x8FDE;&#x63A5;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x89E3;&#x7801;&#x5668;&#x8F93;&#x51FA;&#x7684;&#x5411;&#x91CF;&#xFF0C;&#x6620;&#x5C04;&#x5230;&#x4E00;&#x4E2A;&#x66F4;&#x957F;&#x7684;&#x5411;&#x91CF;&#xFF0C;&#x8FD9;&#x4E2A;&#x5411;&#x91CF;&#x79F0;&#x4E3A;logits&#x5411;&#x91CF;&#x3002;&#x73B0;&#x5728;&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x7684;&#x6A21;&#x578B;&#x6709;10000&#x4E2A;&#x82F1;&#x8BED;&#x5355;&#x8BCD; (&#x6A21;&#x578B;&#x7684;&#x8F93;&#x51FA;&#x8BCD;&#x6C47;&#x8868;)&#xFF0C;&#x8FD9;&#x4E9B;&#x5355;&#x8BCD;&#x662F;&#x4ECE;&#x8BAD;&#x7EC3;&#x96C6;&#x4E2D;&#x5B66;&#x5230;&#x7684;&#x3002;&#x56E0;&#x6B64;logits&#x5411;&#x91CF;&#x6709; 10000 &#x4E2A;&#x6570;&#x5B57;&#xFF0C;&#x6BCF;&#x4E2A;&#x6570;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x7684;&#x5206;&#x6570;&#x3002;&#x6211;&#x4EEC;&#x5C31;&#x662F;&#x8FD9;&#x6837;&#x53BB;&#x7406;&#x89E3;&#x7EBF;&#x6027;&#x5C42;&#x7684;&#x8F93;&#x51FA;&#x3002;</p>
+<p>&#x7EBF;&#x6027;&#x5C42;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x7684;&#x5168;&#x8FDE;&#x63A5;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x89E3;&#x7801;&#x5668;&#x8F93;&#x51FA;&#x7684;&#x5411;&#x91CF;&#xFF0C;&#x6620;&#x5C04;&#x5230;&#x4E00;&#x4E2A;&#x66F4;&#x957F;&#x7684;&#x5411;&#x91CF;&#xFF0C;&#x8FD9;&#x4E2A;&#x5411;&#x91CF;&#x79F0;&#x4E3A;logits&#x5411;&#x91CF;&#x3002;&#x73B0;&#x5728;&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x7684;&#x6A21;&#x578B;&#x6709;10000&#x4E2A;&#x82F1;&#x8BED;&#x5355;&#x8BCD; (&#x6A21;&#x578B;&#x7684;&#x8F93;&#x51FA;&#x8BCD;&#x6C47;&#x8868;)&#xFF0C;&#x8FD9;&#x4E9B;&#x5355;&#x8BCD;&#x662F;&#x4ECE;&#x8BAD;&#x7EC3;&#x96C6;&#x4E2D;&#x5B66;&#x5230;&#x7684;&#x3002;&#x56E0;&#x6B64;logits&#x5411;&#x91CF;&#x6709;10000&#x4E2A;&#x6570;&#x5B57;&#xFF0C;&#x6BCF;&#x4E2A;&#x6570;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x7684;&#x5206;&#x6570;&#x3002;&#x6211;&#x4EEC;&#x5C31;&#x662F;&#x8FD9;&#x6837;&#x53BB;&#x7406;&#x89E3;&#x7EBF;&#x6027;&#x5C42;&#x7684;&#x8F93;&#x51FA;&#x3002;</p>
 <p>&#x7136;&#x540E;&#xFF0C;Softmax&#x5C42;&#x4F1A;&#x628A;&#x8FD9;&#x4E9B;&#x5206;&#x6570;&#x8F6C;&#x6362;&#x4E3A;&#x6982;&#x7387; (&#x628A;&#x6240;&#x6709;&#x7684;&#x5206;&#x6570;&#x8F6C;&#x6362;&#x4E3A;&#x6B63;&#x6570;&#xFF0C;&#x5E76;&#x4E14;&#x52A0;&#x8D77;&#x6765;&#x7B49;&#x4E8E;1)&#x3002;&#x7136;&#x540E;&#x9009;&#x62E9;&#x6700;&#x9AD8;&#x6982;&#x7387;&#x7684;&#x90A3;&#x4E2A;&#x6570;&#x5B57;&#x5BF9;&#x5E94;&#x7684;&#x8BCD;&#xFF0C;&#x5C31;&#x662F;&#x8FD9;&#x4E2A;&#x65F6;&#x95F4;&#x6B65;&#x7684;&#x8F93;&#x51FA;&#x5355;&#x8BCD;&#x3002;</p>
 <p><img src="../assets/LLM/NeurIPS17-Transformer-fig26.png" alt="fig26"></p>
 
@@ -506,7 +561,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"NeurIPS17 - Transformer","level":"2.3.2","depth":2,"next":{"title":"My Lover","level":"3.1","depth":1,"path":"Lover/README.md","ref":"Lover/README.md","articles":[]},"previous":{"title":"LLM Foundations","level":"2.3.1","depth":2,"path":"LLM/LLMModels.md","ref":"LLM/LLMModels.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","splitter","sidebar-style","insert-logo","github","copy-code-button","advanced-emoji","multipart","expandable-chapters","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"","title":"zexin's World"},"chapter-fold":{},"github":{"url":"https://github.com/xinchen-jzx"},"splitter":{},"search-pro":{},"multipart":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 100px; min-height: 30px","url":"https://xinchen-jzx.github.io/assets/img/avatar.jpg"},"expandable-chapters":{}},"theme":"default","author":"Jane","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Blog","links":{"sidebar":{"About Me":"https://xinchen-jzx.github.io"}},"gitbook":"*","description":"zexin's Blog"},"file":{"path":"LLM/neurips17-Transformer.md","mtime":"2025-01-04T06:36:48.978Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-06T02:24:42.394Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"NeurIPS17 - Transformer","level":"2.3.2","depth":2,"next":{"title":"My Lover","level":"3.1","depth":1,"path":"Lover/README.md","ref":"Lover/README.md","articles":[]},"previous":{"title":"LLM Foundations","level":"2.3.1","depth":2,"path":"LLM/LLMModels.md","ref":"LLM/LLMModels.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","splitter","sidebar-style","insert-logo","github","copy-code-button","advanced-emoji","multipart","expandable-chapters","theme-comscore","katex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"","title":"zexin's World"},"chapter-fold":{},"github":{"url":"https://github.com/xinchen-jzx"},"splitter":{},"search-pro":{},"multipart":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 100px; min-height: 30px","url":"https://xinchen-jzx.github.io/assets/img/avatar.jpg"},"expandable-chapters":{}},"theme":"default","author":"Jane","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Blog","links":{"sidebar":{"About Me":"https://xinchen-jzx.github.io"}},"gitbook":"*","description":"zexin's Blog"},"file":{"path":"LLM/neurips17-Transformer.md","mtime":"2025-01-06T03:01:06.601Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-06T05:30:09.596Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -1,8 +1,4 @@
----
-title: osdi20-Gavel
-date: 2024-12-27
-tags: GPU Cluster Management
----
+# OSDI20 - Gavel
 
 > Heterogeneity-Aware Cluster Scheduling Policies for Deep Learning Workloads
 
