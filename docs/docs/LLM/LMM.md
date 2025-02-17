@@ -1,1 +1,0 @@
-# Multimodality and Large Multimodal Models (LMMs)
