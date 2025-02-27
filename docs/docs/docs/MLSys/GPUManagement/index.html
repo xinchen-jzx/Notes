@@ -1,0 +1,608 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>GPU Management · Blog</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Jane">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sidebar-style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../MLServing/" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://xinchen-jzx.github.io" target="_blank" class="custom-link">About Me</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part I: Study</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../ProgrammingLanguage/">
+            
+                <a href="../../ProgrammingLanguage/">
+            
+                    
+                    Programming Language
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../ProgrammingLanguage/CPP/README.md">
+            
+                <span>
+            
+                    
+                    CPP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../ProgrammingLanguage/Rust/README.md">
+            
+                <span>
+            
+                    
+                    Rust
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    MLSys
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    GPU Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../MLServing/">
+            
+                <a href="../MLServing/">
+            
+                    
+                    MLServing
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.2.1" data-path="../MLServing/sosp23-vLLM.html">
+            
+                <a href="../MLServing/sosp23-vLLM.html">
+            
+                    
+                    SOSP23 - vLLM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.2" data-path="../MLServing/icml23-DejaVu.html">
+            
+                <a href="../MLServing/icml23-DejaVu.html">
+            
+                    
+                    ICML23 - DejaVu
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.3" data-path="../MLServing/acl24-LLM_in_a_flash.html">
+            
+                <a href="../MLServing/acl24-LLM_in_a_flash.html">
+            
+                    
+                    ACL24 - LLM in a flash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.4" data-path="../MLServing/sosp24-PowerInfer.html">
+            
+                <a href="../MLServing/sosp24-PowerInfer.html">
+            
+                    
+                    SOSP24 - PowerInfer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../LLM/">
+            
+                <a href="../../LLM/">
+            
+                    
+                    LLM
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../../LLM/LLMModels.html">
+            
+                <a href="../../LLM/LLMModels.html">
+            
+                    
+                    LLM Foundations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../../LLM/MLServing.html">
+            
+                <a href="../../LLM/MLServing.html">
+            
+                    
+                    ML Serving
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../../LLM/neurips17-Transformer.html">
+            
+                <a href="../../LLM/neurips17-Transformer.html">
+            
+                    
+                    NeurIPS17 - Transformer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part II: Life</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../Lover/">
+            
+                <a href="../../Lover/">
+            
+                    
+                    My Lover
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../Reading/">
+            
+                <a href="../../Reading/">
+            
+                    
+                    Reading
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../../Reading/My_Altay.html">
+            
+                <a href="../../Reading/My_Altay.html">
+            
+                    
+                    我的阿勒泰
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../Guitar/">
+            
+                <a href="../../Guitar/">
+            
+                    
+                    Guitar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../../Friends/">
+            
+                <a href="../../Friends/">
+            
+                    
+                    My Friends
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >GPU Management</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="gpu-management">GPU Management</h1>
+<ul>
+<li>OSDI18 - Ganddiva: Introspective Cluster Scheduling for Deep Learning</li>
+<li>EuroSys20 - Balancing Efficiency and Fairness in Heterogeneous GPU Clusters for Deep Learning</li>
+<li>OSDI20 - HiveD: Sharing a GPU Cluster for Deep Learning with Guarantees</li>
+<li>OSDI20 - Heterogeneity-Aware Cluster Scheduling Policies for Deep Learning Workloads
+-OSDI20 -  A Unified Architecture for Accelerating Distributed DNN Training in Heterogeneous GPU/CPU Clusters</li>
+<li>OSDI20 - AntMan: Dynamic Scaling on GPU Clusters for Deep Learning</li>
+<li>NSDI22 - MLaaS in the Wild: Workload Analysis and Scheduling in Large-Scale Heterogeneous GPU Clusters</li>
+<li>EuroSys24 - HAP: SPMD DNN Training on Heterogeneous GPU Clusters with Automated Program Synthesis</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: MLSys">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../MLServing/" class="navigation navigation-next " aria-label="Next page: MLServing">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"GPU Management","level":"2.2.1","depth":2,"next":{"title":"MLServing","level":"2.2.2","depth":2,"path":"MLSys/MLServing/README.md","ref":"MLSys/MLServing/README.md","articles":[{"title":"SOSP23 - vLLM","level":"2.2.2.1","depth":3,"path":"MLSys/MLServing/sosp23-vLLM.md","ref":"MLSys/MLServing/sosp23-vLLM.md","articles":[]},{"title":"ICML23 - DejaVu","level":"2.2.2.2","depth":3,"path":"MLSys/MLServing/icml23-DejaVu.md","ref":"MLSys/MLServing/icml23-DejaVu.md","articles":[]},{"title":"ACL24 - LLM in a flash","level":"2.2.2.3","depth":3,"path":"MLSys/MLServing/acl24-LLM_in_a_flash.md","ref":"MLSys/MLServing/acl24-LLM_in_a_flash.md","articles":[]},{"title":"SOSP24 - PowerInfer","level":"2.2.2.4","depth":3,"path":"MLSys/MLServing/sosp24-PowerInfer.md","ref":"MLSys/MLServing/sosp24-PowerInfer.md","articles":[]}]},"previous":{"title":"MLSys","level":"2.2","depth":1,"path":"MLSys/README.md","ref":"MLSys/README.md","articles":[{"title":"GPU Management","level":"2.2.1","depth":2,"path":"MLSys/GPUManagement/README.md","ref":"MLSys/GPUManagement/README.md","articles":[]},{"title":"MLServing","level":"2.2.2","depth":2,"path":"MLSys/MLServing/README.md","ref":"MLSys/MLServing/README.md","articles":[{"title":"SOSP23 - vLLM","level":"2.2.2.1","depth":3,"path":"MLSys/MLServing/sosp23-vLLM.md","ref":"MLSys/MLServing/sosp23-vLLM.md","articles":[]},{"title":"ICML23 - DejaVu","level":"2.2.2.2","depth":3,"path":"MLSys/MLServing/icml23-DejaVu.md","ref":"MLSys/MLServing/icml23-DejaVu.md","articles":[]},{"title":"ACL24 - LLM in a flash","level":"2.2.2.3","depth":3,"path":"MLSys/MLServing/acl24-LLM_in_a_flash.md","ref":"MLSys/MLServing/acl24-LLM_in_a_flash.md","articles":[]},{"title":"SOSP24 - PowerInfer","level":"2.2.2.4","depth":3,"path":"MLSys/MLServing/sosp24-PowerInfer.md","ref":"MLSys/MLServing/sosp24-PowerInfer.md","articles":[]}]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","splitter","sidebar-style","insert-logo","github","copy-code-button","advanced-emoji","multipart","expandable-chapters","theme-comscore","katex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"","title":"zexin's World"},"chapter-fold":{},"github":{"url":"https://github.com/xinchen-jzx"},"splitter":{},"search-pro":{},"multipart":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 100px; min-height: 30px","url":"https://xinchen-jzx.github.io/assets/img/avatar.jpg"},"expandable-chapters":{}},"theme":"default","author":"Jane","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Blog","links":{"sidebar":{"About Me":"https://xinchen-jzx.github.io"}},"gitbook":"*","description":"zexin's Blog"},"file":{"path":"MLSys/GPUManagement/README.md","mtime":"2025-01-13T13:57:00.900Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-02-17T05:16:15.244Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sidebar-style/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

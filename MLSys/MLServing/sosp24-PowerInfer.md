@@ -27,19 +27,17 @@ Key Reason：
 
 > "In self-attention blocks, nearly half of the attention heads (neurons) make minimal contributions, leading to their high sparsity. The sparsity observed within the MLP blocks is primarily attributed to the characteristics of the activation functions."
 
-介绍一下自回归生成是什么？给了左边这个架构图，注意到里面的激活函数是ReLU。
-
 ![fig5](../../assets/MLSys/MLServing/sosp24-PowerInfer-fig5.png)
 
 ### 2.2 Offloading-Based LLM Serving
 
 ![fig6](../../assets/MLSys/MLServing/sosp24-PowerInfer-fig6.png)
 
-之前的工作主要可以分成**GPU-centric offloading**和**GPU-CPU hybrid Offloading**两种。
+**GPU-Centric Offloading**：例如FlexGen和DejaVu。用内存存储超出显存容量的参数。GPU和CPU之间的数据传输很频繁，延迟很高。
 
-**GPU-Centric Offloading**：用内存存储超出显存容量的参数。GPU和CPU之间的数据传输很频繁，延迟很高。举例FlexGen和DejaVu。FlexGen采用一种"zig-zag scheduling approach to prioritize throughput over latency"；DejaVu只处理预测中要被激活的neuron，但是设计的时候是为了data center inference，在consumer-grade的GPU上运行的很差，总体表现出来的延时和FlexGen差不多。
+**GPU-CPU Hybrid Offloading**：例如llama.cpp。按照layer进行分割，CPU首先处理一部分，然后把中间结果送进GPU做计算，相当于传输reduce过的数据，提高了带宽的利用率；这种方法推理的时候还是要访问整个模型，并且把很大一部分计算的负载交给了性能并不高的CPU（因为内存更大），导致最后整体性能仍然受限。
 
-**GPU-CPU hybrid Offloading**：llama.cpp。按照layer进行分割，CPU首先处理一部分，然后把中间结果送进GPU做计算，相当于传输reduce过的数据，提高了带宽的利用率；这种方法推理的时候还是要访问整个模型，并且把很大一部分计算的负载交给了性能并不高的CPU（因为内存更大），导致最后整体性能仍然受限。
+![fig17](../../assets/MLSys/MLServing/sosp24-PowerInfer-fig17.png)
 
 ## 3. Insights into Locality in LLM Inference
 
@@ -47,13 +45,9 @@ Key Reason：
 
 ![fig1](../../assets/MLSys/MLServing/sosp24-PowerInfer-fig1.png)
 
-> While Insight-1 indicates that 43% of neurons account for 80% of the total activations in a single MLP layer, it is typically found that only about 10% of its neurons are activated during an individual inference iteration.
-
 ### 3.2 Insight-2: Fast In-CPU Compuation
 
 ![fig7](../../assets/MLSys/MLServing/sosp24-PowerInfer-fig7.png)
-
-走PCIe传输太慢了，慢到在batch size小的情况下在CPU本地利用AVX做计算的时间可能比传输到GPU然后再算的时间还短。
 
 ## 4. PowerInfer Overview
 
@@ -73,17 +67,17 @@ Online Predictor + 调度器
 
 ### 5.1 Adaptive Sparsity Predictors
 
-需要在预测准确性和模型大小之间取得平衡。同时predictor访问频率很高，所以需要保存在GPU显存中。如果采用固定大小的predictor就会占用很多空间，但是减小predictor大小又会导致预测准确度过低、模型推理性能下降。
+我们需要在预测准确性和模型大小之间取得平衡。同时predictor访问频率很高，所以需要保存在GPU显存中。如果采用固定大小的predictor就会占用很多空间，但是减小predictor大小又会导致预测准确度过低、模型推理性能下降。
 
 predictor大小主要受到两方面的影响：LLM layer的activation稀疏性和内部neuron的倾向性。如果一个layer的输出很稀疏，意味着预测起来比较简单，就可以采用比较简单的predictor，反之则需要更大的；内部的neuron倾向性也是类似，如果某层大部分时候都只有几个特定的被激活，那用很简单的predictor效果也很好。
 
-出于对以上两种因素的优化，PowerInfer设计了一个大小不固定的predictor迭代训练方法。首先根据offline阶段统计的某层的sparsity指定参数量的baseline，然后迭代地根据内部activation的偏向性调整参数量。在迭代调整过程中，根据观察到的偏斜性修改隐藏层的维度。对于展示出显著偏斜性的层，逐渐减少隐藏层大小，直到准确性降低到95%以下。相反，对于偏斜性最小的层，增加维度以提高准确性。通过这种方法，PowerInfer有效地将预测器参数限制在LLM参数总数的仅10%。
+出于对以上两种因素的优化，PowerInfer设计了一个大小不固定的predictor迭代训练方法。首先根据offline阶段统计的某层的sparsity指定参数量的baseline，然后迭代地根据内部activation的偏向性调整参数量。在迭代调整过程中，根据观察到的偏斜性修改隐藏层的维度。对于展示出显著偏斜性的层，逐渐减少隐藏层大小，直到准确性降低到95%以下。相反，对于偏斜性最小的层，增加维度以提高准确性。通过这种方法，PowerInfer有效地将预测器参数限制在LLM参数总数的6%以内。
 
 ![fig9](../../assets/MLSys/MLServing/sosp24-PowerInfer-fig9.png)
 
 ### 5.2 Neuron Placement and Management
 
-在CPU和GPU中各创建一张Neuron Table，将Neuron和矩阵中的原始位置相关联。做法和一般的稀疏计算的做法差不多？表的大小不大，对于175B的模型表也只有9MB左右，基本可以忽略。
+在CPU和GPU中各创建一张Neuron Table，将Neuron和矩阵中的原始位置相关联。做法和一般的稀疏计算的做法差不多？表的大小不大，基本可以忽略。
 
 ### 5.3 GPU-CPU Hybrid Execution
 
