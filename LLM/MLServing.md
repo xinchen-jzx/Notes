@@ -87,3 +87,8 @@ LLM服务显存占用主要由三部分组成：**模型权重**、**KVCache**�
 3. **KV Cache显存管理策略优化**：使用按需分配显存策略代替预分配显存策略。
 
 vLLM主要通过1、3两种方式来优化LLM服务吞吐，方式2与方式1、3不冲突，在vLLM之上可以综合量化方式继续优化吞吐。
+
+## 3. Dynamic Batch (Continous Batch)
+
+![fig5](../assets/LLM/MLServing-fig5.png)
+
