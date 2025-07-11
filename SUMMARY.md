@@ -9,6 +9,8 @@
     * [Rust](ProgrammingLanguage/Rust/README.md)
 * [MLSys](MLSys/README.md)
     * [AI Compiler](MLSys/AICompiler/README.md)
+        * [MLIR](MLSys/AICompiler/MLIR.md)
+        * [Linalg Dialect](MLSys/AICompiler/Linalg.md)
         * [PLDI13 - Halide](MLSys/AICompiler/pldi13-Halide.md)
     * [GPU Management](MLSys/GPUManagement/README.md)
     * [MLServing](MLSys/MLServing/README.md)
